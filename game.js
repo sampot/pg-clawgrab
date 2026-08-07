@@ -63,6 +63,7 @@ export class ClawgrabGame {
     this._nextId = 1;
     this.flashMsg = "";
     this.flashTone = "";
+    this._lastMoveEvt = 0;
     this.seedPlushies();
   }
 
@@ -250,7 +251,11 @@ export class ClawgrabGame {
       const prev = this.clawX;
       this.clawX += this.moveDir * MOVE_SPEED * dt;
       this.clawX = Math.max(CLAW_MIN_X, Math.min(CLAW_MAX_X, this.clawX));
-      if (Math.abs(this.clawX - prev) > 0.5 && Math.random() < 0.08) {
+      if (
+        Math.abs(this.clawX - prev) > 0.5 &&
+        now - (this._lastMoveEvt || 0) > 90
+      ) {
+        this._lastMoveEvt = now;
         events.push("move");
       }
     }

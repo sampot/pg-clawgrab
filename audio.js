@@ -7,7 +7,7 @@ export class ClawgrabAudio {
     /** @type {AudioContext | null} */
     this.ctx = null;
     this.enabled = true;
-    this.master = 0.2;
+    this.master = 0.24;
   }
 
   async unlock() {
@@ -58,12 +58,13 @@ export class ClawgrabAudio {
   }
 
   move() {
-    this.tone(180, 0.03, "triangle", 0.035);
+    this.tone(190, 0.035, "triangle", 0.055);
+    this.tone(140, 0.03, "sine", 0.03, 0.02);
   }
 
   drop() {
-    this.tone(240, 0.08, "sawtooth", 0.07);
-    this.tone(160, 0.12, "triangle", 0.06, 0.06);
+    this.tone(240, 0.09, "sawtooth", 0.09);
+    this.tone(160, 0.13, "triangle", 0.07, 0.06);
   }
 
   clamp() {

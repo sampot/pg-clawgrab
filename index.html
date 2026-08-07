@@ -38,17 +38,11 @@
         </div>
       </section>
 
-      <div class="stage">
-        <canvas
-          id="game"
-          width="480"
-          height="640"
-          role="img"
-          aria-label="夾娃娃機台畫面"
-        ></canvas>
+      <div class="controls">
+        <button type="button" id="btn-start">開台</button>
+        <button type="button" id="btn-coin" class="secondary">投幣 +3</button>
+        <button type="button" id="btn-reset" class="secondary">重來</button>
       </div>
-
-      <p id="status" class="status" role="status">投幣開台，對準再下爪</p>
 
       <div class="pad" aria-label="機台操作">
         <button type="button" id="btn-left" class="pad-btn" aria-label="爪子向左">
@@ -62,14 +56,20 @@
         </button>
       </div>
 
-      <div class="controls">
-        <button type="button" id="btn-start">開台</button>
-        <button type="button" id="btn-coin" class="secondary">投幣 +3</button>
-        <button type="button" id="btn-reset" class="secondary">重來</button>
+      <p id="status" class="status" role="status">投幣開台，對準再下爪</p>
+
+      <div class="stage">
+        <canvas
+          id="game"
+          width="480"
+          height="640"
+          role="img"
+          aria-label="夾娃娃機台畫面"
+        ></canvas>
       </div>
 
       <p class="hint">
-        左右移動爪子（按住按鈕、拖曳畫面或鍵盤 ← →），對準絨玩偶後按「下爪」。
+        上方開台／投幣後，用左右與「下爪」操作（按住按鈕、拖曳畫面或鍵盤 ← →）。
         對得越準越容易夾到，但仍會喜劇失手——近在咫尺也常滑掉。致敬夾娃娃機玩法，非任一商業作品復刻。
       </p>
     </main>
